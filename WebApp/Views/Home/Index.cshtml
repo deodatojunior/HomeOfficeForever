@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem-vindo ao Home Office Forever</h1>
+    <p>Pesquise o imóvel que deseja consultar pela localização.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-sm-12">
+        <form asp-controller="Imovel" asp-action="PesquisaCidade">
+            <p>
+                Cidade do imóvel: <input type="text" name="pesquisa" />
+                <input class="btn-success" type="submit" value="Pesquisar" />
+            </p>
+        </form>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <form asp-controller="Imovel" asp-action="PesquisaBairro">
+            <p>
+                Bairro do imóvel: <input type="text" name="pesquisa2" />
+                <input class="btn-success" type="submit" value="Pesquisar" />
+            </p>
+        </form>
+    </div>
+</div>

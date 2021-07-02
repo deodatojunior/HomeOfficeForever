@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WebApp.Models.ImovelViewModel>
+
+@{
+    ViewData["Title"] = "Pesquisa por bairro";
+}
+
+<h1>Pesquisa Por Marca</h1>
+
+<p>
+    <a asp-Controller="Home" asp-action="Index">Voltar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Código do imóvel
+            </th>
+            <th>
+                Nome da cidade
+            </th>
+            <th>
+                Nome do bairro
+            </th>
+            <th>
+                Quantidade de quartos
+            </th>
+            <th>
+                Valor do aluguel
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bairro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.quantidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.valor)
+                </td>
+                <td>
+                    @Html.ActionLink("Alterar", "Alterar", new { id = item.id }) |
+                    @Html.ActionLink("Detalhar", "Detalhar", new { id = item.id }) |
+                    @Html.ActionLink("Excluir", "Excluir", new { id = item.id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
